@@ -19,20 +19,32 @@ var fourTodo = $("#4amTodo");
 
 //select save buttons 
 
-var nineSave = $("#9amSave");
-var tenSave = $("#10amSave");
-var elevenTSave= $("#11amSave");
-var twelveSave = $("#12amSave");
-var oneSave = $("#1pmSave");
-var twoSave = $("#2pmSave");
-var threeSave = $("#3pmSave");
-var fourSave = $("#4amSave");
+var nineSave = $("#nineSave");
+var tenSave = $("#tenSave");
+var elevenTSave= $("#elevenSave");
+var twelveSave = $("#twelveSave");
+var oneSave = $("#oneSave");
+var twoSave = $("#twoSave");
+var threeSave = $("#threeSave");
+var fourSave = $("#fourSave");
+var fiveSave = $("#fiveSave");
 
 //TODO: when submit button is clicked save the value of the text area to local storage
 
-saveBtn.on("click", function(){ 
-    console.log("clicked")
-    //how do you get the value of the text area?
-    var todoInput = $("textarea").val();
-    console.log(todoInput);
-});
+nineSave.on("click", function(){
+    console.log("clicked");
+    var userTodo = nineTodo.val()
+    console.log(userTodo);
+    localStorage.setItem("userTodo", JSON.stringify(userTodo));
+})
+
+// $(".saveBtn").on("click", function(){
+//     alert("clicked");
+// })
+
+// $("#nineSave").on("click", function(){
+//     console.log("click")
+// });
+
+var savedTodo = localStorage.getItem("userTodo");
+nineTodo.text(savedTodo);
