@@ -5,7 +5,6 @@ var saveBtn = $(".saveBtn");
 var todoInput = $("textarea").val();
 var  timeBlock = $(".time-block"); 
 var hour = $(".hour");
-var todoList = JSON.parse(localStorage.getItem("todos")) || [];
 
 //select text areas by ID
 var nineTodo = $("#9amTodo");
@@ -18,10 +17,9 @@ var threeTodo = $("#3pmTodo");
 var fourTodo = $("#4amTodo");
 
 //select save buttons 
-
 var nineSave = $("#nineSave");
 var tenSave = $("#tenSave");
-var elevenTSave= $("#elevenSave");
+var elevenSave= $("#elevenSave");
 var twelveSave = $("#twelveSave");
 var oneSave = $("#oneSave");
 var twoSave = $("#twoSave");
@@ -33,18 +31,38 @@ var fiveSave = $("#fiveSave");
 
 nineSave.on("click", function(){
     console.log("clicked");
-    var userTodo = nineTodo.val()
-    console.log(userTodo);
-    localStorage.setItem("userTodo", JSON.stringify(userTodo));
+    var userNineTodo = nineTodo.val()
+    console.log(userNineTodo);
+    localStorage.setItem("userTodoNine", JSON.stringify(userNineTodo));
 })
+tenSave.on("click", function(){
+    console.log("clicked");
+    var userTenTodo = tenTodo.val()
+    console.log(userTenTodo);
+    localStorage.setItem("userTodoTen", JSON.stringify(userTenTodo));
+    
+})
+elevenSave.on("click", function(){
+    console.log("clicked");
+    var userElevenTodo = elevenTodo.val()
+    console.log(userElevenTodo);
+    localStorage.setItem("userTodoEleven", JSON.stringify(userElevenTodo));
+    
+})
+function displaySaveTodos(){
+    var savedTodoNine = localStorage.getItem("userTodoNine");
+    nineTodo.text(savedTodoNine);
 
-// $(".saveBtn").on("click", function(){
-//     alert("clicked");
-// })
+    var savedTodoTen = localStorage.getItem("userTodoTen");
+    tenTodo.text(savedTodoTen);
 
-// $("#nineSave").on("click", function(){
-//     console.log("click")
-// });
+    var savedTodoEleven = localStorage.getItem("userTodoEleven");
+    elevenTodo.text(savedTodoEleven);
+};
+displaySaveTodos();
 
-var savedTodo = localStorage.getItem("userTodo");
-nineTodo.text(savedTodo);
+// var savedTodoTen = localStorage.getItem("userTodoTen");
+// tenTodo.text(savedTodoTen);
+
+// var savedTodoEleven = localStorage.getItem("userTodoEleven");
+// tenTodo.text(savedTodoEleven);
