@@ -1,6 +1,4 @@
-//Pseudo Code 
-
-// TODO: Select elements from HTML
+//Select elements from HTML
 var saveBtn = $(".saveBtn");
 var todoInput = $("textarea").val();
 var  timeBlock = $(".time-block"); 
@@ -28,7 +26,7 @@ var threeSave = $("#threeSave");
 var fourSave = $("#fourSave");
 var fiveSave = $("#fiveSave");
 
-//TODO: when save button is clicked save the value of the text area to local storage
+//when save button is clicked save the value of the text area to local storage
 
 nineSave.on("click", function(){
     console.log("clicked");
@@ -122,7 +120,7 @@ function displaySaveTodos(){
     fiveTodo.text(savedTodoFive);
 };
 displaySaveTodos();
- //TODO: toggle classes based on current time
+ //toggle classes based on current time
 
  var dt = new Date($.now());
  var currentTime = dt.getHours();
@@ -199,4 +197,6 @@ if(currentTime > 17){
 } else {
     fiveTodo.parent().addClass("future");
 }
+
+
 
