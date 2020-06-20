@@ -28,7 +28,7 @@ var threeSave = $("#threeSave");
 var fourSave = $("#fourSave");
 var fiveSave = $("#fiveSave");
 
-//TODO: when submit button is clicked save the value of the text area to local storage
+//TODO: when save button is clicked save the value of the text area to local storage
 
 nineSave.on("click", function(){
     console.log("clicked");
@@ -92,6 +92,7 @@ fiveSave.on("click", function(){
     localStorage.setItem("userTodoFive", JSON.stringify(userFiveTodo));
     
 })
+//display the values saved in local storage to text areas
 function displaySaveTodos(){
     var savedTodoNine = localStorage.getItem("userTodoNine");
     nineTodo.text(savedTodoNine);
@@ -121,9 +122,81 @@ function displaySaveTodos(){
     fiveTodo.text(savedTodoFive);
 };
 displaySaveTodos();
+ //TODO: toggle classes based on current time
 
-// var savedTodoTen = localStorage.getItem("userTodoTen");
-// tenTodo.text(savedTodoTen);
+ var dt = new Date($.now());
+ var currentTime = dt.getHours();
+ console.log(currentTime);
+//toggle class by time of day
+ if(currentTime > 9){
+     nineTodo.parent().addClass("past");
+ } else if (currentTime === 9){
+     nineTodo.parent().addClass("present");
+ } else {
+     nineTodo.parent().addClass("future");
+ }
 
-// var savedTodoEleven = localStorage.getItem("userTodoEleven");
-// tenTodo.text(savedTodoEleven);
+ if(currentTime > 10){
+    tenTodo.parent().addClass("past");
+} else if (currentTime === 10){
+    tenTodo.parent().addClass("present");
+} else {
+    tenTodo.parent().addClass("future");
+}
+
+if(currentTime > 11){
+    elevenTodo.parent().addClass("past");
+} else if (currentTime === 11){
+    elevenTodo.parent().addClass("present");
+} else {
+    elevenTodo.parent().addClass("future");
+}
+
+if(currentTime > 12){
+    twelveTodo.parent().addClass("past");
+} else if (currentTime === 12){
+    twelveTodo.parent().addClass("present");
+} else {
+    twelveTodo.parent().addClass("future");
+}
+
+if(currentTime > 13){
+    oneTodo.parent().addClass("past");
+} else if (currentTime === 13){
+    oneTodo.parent().addClass("present");
+} else {
+    oneTodo.parent().addClass("future");
+}
+
+if(currentTime > 14){
+    twoTodo.parent().addClass("past");
+} else if (currentTime === 14){
+    twoTodo.parent().addClass("present");
+} else {
+    twoTodo.parent().addClass("future");
+}
+
+if(currentTime > 15){
+    threeTodo.parent().addClass("past");
+} else if (currentTime === 15){
+    threeTodo.parent().addClass("present");
+} else {
+    threeTodo.parent().addClass("future");
+}
+
+if(currentTime > 16){
+    fourTodo.parent().addClass("past");
+} else if (currentTime === 16){
+    fourTodo.parent().addClass("present");
+} else {
+    fourTodo.parent().addClass("future");
+}
+
+if(currentTime > 17){
+    fiveTodo.parent().addClass("past");
+} else if (currentTime === 17){
+    fiveTodo.parent().addClass("present");
+} else {
+    fiveTodo.parent().addClass("future");
+}
+
