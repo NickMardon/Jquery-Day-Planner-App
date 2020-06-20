@@ -10,11 +10,12 @@ var hour = $(".hour");
 var nineTodo = $("#9amTodo");
 var tenTodo = $("#10amTodo");
 var elevenTodo = $("#11amTodo");
-var twelveTodo = $("#12amTodo");
+var twelveTodo = $("#12pmTodo");
 var oneTodo = $("#1pmTodo");
 var twoTodo = $("#2pmTodo");
 var threeTodo = $("#3pmTodo");
-var fourTodo = $("#4amTodo");
+var fourTodo = $("#4pmTodo");
+var fiveTodo = $("#5pmTodo");
 
 //select save buttons 
 var nineSave = $("#nineSave");
@@ -49,6 +50,48 @@ elevenSave.on("click", function(){
     localStorage.setItem("userTodoEleven", JSON.stringify(userElevenTodo));
     
 })
+twelveSave.on("click", function(){
+    console.log("clicked");
+    var userTwelveTodo = twelveTodo.val()
+    console.log(userTwelveTodo);
+    localStorage.setItem("userTodoTwelve", JSON.stringify(userTwelveTodo));
+    
+})
+oneSave.on("click", function(){
+    console.log("clicked");
+    var userOneTodo = oneTodo.val()
+    console.log(userOneTodo);
+    localStorage.setItem("userTodoOne", JSON.stringify(userOneTodo));
+    
+})
+twoSave.on("click", function(){
+    console.log("clicked");
+    var userTwoTodo = twoTodo.val()
+    console.log(userTwoTodo);
+    localStorage.setItem("userTodoTwo", JSON.stringify(userTwoTodo));
+    
+})
+threeSave.on("click", function(){
+    console.log("clicked");
+    var userThreeTodo = threeTodo.val()
+    console.log(userThreeTodo);
+    localStorage.setItem("userTodoThree", JSON.stringify(userThreeTodo));
+    
+})
+fourSave.on("click", function(){
+    console.log("clicked");
+    var userFourTodo = fourTodo.val()
+    console.log(userFourTodo);
+    localStorage.setItem("userTodoFour", JSON.stringify(userFourTodo));
+    
+})
+fiveSave.on("click", function(){
+    console.log("clicked");
+    var userFiveTodo = fiveTodo.val()
+    console.log(userFiveTodo);
+    localStorage.setItem("userTodoFive", JSON.stringify(userFiveTodo));
+    
+})
 function displaySaveTodos(){
     var savedTodoNine = localStorage.getItem("userTodoNine");
     nineTodo.text(savedTodoNine);
@@ -58,6 +101,24 @@ function displaySaveTodos(){
 
     var savedTodoEleven = localStorage.getItem("userTodoEleven");
     elevenTodo.text(savedTodoEleven);
+
+    var savedTodoTwelve = localStorage.getItem("userTodoTwelve");
+    twelveTodo.text(savedTodoTwelve);
+
+    var savedTodoOne = localStorage.getItem("userTodoOne");
+    oneTodo.text(savedTodoOne);
+
+    var savedTodoTwo = localStorage.getItem("userTodoTwo");
+    twoTodo.text(savedTodoTwo);
+
+    var savedTodoThree = localStorage.getItem("userTodoThree");
+    threeTodo.text(savedTodoThree);
+
+    var savedTodoFour = localStorage.getItem("userTodoFour");
+    fourTodo.text(savedTodoFour);
+
+    var savedTodoFive = localStorage.getItem("userTodoFive");
+    fiveTodo.text(savedTodoFive);
 };
 displaySaveTodos();
 
