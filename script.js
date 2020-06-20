@@ -3,6 +3,7 @@ var saveBtn = $(".saveBtn");
 var todoInput = $("textarea").val();
 var  timeBlock = $(".time-block"); 
 var hour = $(".hour");
+var dateDisplay = $("#currentDay");
 
 //select text areas by ID
 var nineTodo = $("#9amTodo");
@@ -120,9 +121,12 @@ function displaySaveTodos(){
     fiveTodo.text(savedTodoFive);
 };
 displaySaveTodos();
- //toggle classes based on current time
-
+//get current date
  var dt = new Date($.now());
+var date = dt.getDate();
+var month = dt.getMonth();
+var year = dt.getFullYear();
+dateDisplay.text((month + 1) + "-" + date + "-" + year);
  var currentTime = dt.getHours();
  console.log(currentTime);
 //toggle class by time of day
